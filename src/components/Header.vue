@@ -3,7 +3,7 @@ import { RouterLink } from "vue-router";
 </script>
 
 <template>
-  <nav class="bg-red-500 p-3 text-white">
+  <nav class="bg-blue-500 p-3 text-white">
     <ul class="flex justify-between items-center font-bold">
       <li><RouterLink to="/">Home</RouterLink></li>
       <li><RouterLink to="/about">About</RouterLink></li>
