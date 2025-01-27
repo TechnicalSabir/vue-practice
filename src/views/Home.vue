@@ -5,8 +5,16 @@ export default {
     return {
       email: "admin@gmail.com",
       mobile: 9988776655,
-      getName: (name = "Hello Name") => {
-        return name
+    }
+  },
+  methods: {
+    getName(name) {
+      return name
+    },
+    getData() {
+      return {
+        name: "Harry",
+        email: this.email
       }
     }
   }
@@ -15,12 +23,12 @@ export default {
 <template>
   <main class="flex justify-center items-center flex-col">
     <h1 class="text-3xl font-bold">Home Page</h1>
-    <h1>{{ 10 + 10 }}</h1>
-    <h1>{{ ("Hello").length }}</h1>
-    <h1>{{ email }}</h1>
-    <h1>{{ mobile }}</h1>
-    <h1>{{ mobile }}</h1>
-    <h1>{{ getName("Peter parker") }}</h1>
-    <h1>{{ mobile = 9988776651 }}</h1>  <!-- We can change the value of the variable too. -->
+    <h1>Email: {{ email }}</h1>
+    <h1>Name: {{ getName("John Wick") }}</h1>
+    <h1>Name2: {{ getName("Bruce Banner") }}</h1>
+    <h1>All Data: {{ getData() }}</h1>
+    <h1>Name: {{ getData().name }}</h1>
+    <h1>Email: {{ getData().email }}</h1>
+
   </main>
 </template>
