@@ -1,36 +1,28 @@
 <script>
+import Child from "../components/inc/Child.vue";
 export default {
   name: "Home",
+  components: {
+    Child
+  },
   data() {
     return {
-      technology: ["Java", "PHP", "Node", "HTML"],
-      users: [
-        { name: "Harry", email: "harry@gmail.com" },
-        { name: "Peter", email: "peter@gmail.com" },
-        { name: "Sam", email: "sam@gmail.com" },
-        { name: "John", email: "john@gmail.com" },
-      ]
+      user: { name: "Peter", email: "peter@gmail.com" }
+    }
+  },
+  methods: {
+    getData() {
+      console.log("Parent function called")
     }
   }
+
 }
 </script>
 <template>
   <main class="flex justify-center items-center flex-col">
     <h1 class="text-3xl font-bold">Home Page</h1>
-    <div class="flex gap-20">
-      <div class="my-3">
-        <h2 class="font-bold">Technology</h2>
-        <ul class="list-disc">
-          <li v-for="item in technology" :key="item">{{ item }}</li>
-        </ul>
-      </div>
-      <div class="my-3">
-        <h2 class="font-bold">Users</h2>
-        <ul class="list-disc">
-          <li v-for="item in users" :key="item.name">{{ item.name  }} - {{ item.email }}</li>
-        </ul>
-      </div>
-    </div>
+    <h1 class="text-2xl font-bold">Pass data to child</h1>
+    <Child name="John wick" :user="user" :getData="getData" />
 
   </main>
 </template>
