@@ -7,11 +7,6 @@ export default {
       tag: `<span>Hello world</span>`
     }
   },
-  methods: {
-    getText() {
-      return this.text;
-    }
-  }
 }
 </script>
 <template>
