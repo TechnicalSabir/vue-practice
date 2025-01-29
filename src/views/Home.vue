@@ -9,12 +9,23 @@ export default {
         country: "India",
         technology: [],
         gender: ""
-      }
+      },
+      errors: []
     }
   },
   methods: {
     handleLogin() {
-      console.warn("login data", this.formData);
+      this.errors = [];
+      for (let item in this.formData) {
+        if (this.formData[item] === "" || this.formData[item].length === 0) {
+          this.errors.push(item);
+        }
+      }
+
+      if (this.errors.length === 0) {
+        alert("Data has been submitted!");
+      }
+      console.log(this.errors);
     }
   }
 }
@@ -23,6 +34,9 @@ export default {
   <main class="flex justify-center items-center flex-col">
     <h1 class="text-3xl font-bold">Home Page</h1>
     <h1>Simple Form Example</h1>
+    <ul>
+      <li v-for="item in errors" :key="item" class="text-red-500">{{ item }} not valid</li>
+    </ul>
     <p>{{ formData }}</p>
 
     <div class="my-4">
