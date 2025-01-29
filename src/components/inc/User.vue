@@ -1,12 +1,18 @@
 <script>
 export default {
     name: "User",
+    data() {
+        return {
+            userName: "Peter"
+        }
+    },
     props: {
-        users: Array
+        getUserName: Function
     }
 }
 </script>
 
 <template>
-    <h2 v-for="item in users">{{ item.name }} - {{ item.email }}</h2>
+    <h1>User Component</h1>
+    <button class="bg-blue-400 p-1 rounded-sm cursor-pointer" @click="getUserName(userName)">Send Username</button>
 </template>

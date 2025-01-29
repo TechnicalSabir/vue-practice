@@ -1,17 +1,15 @@
 <script>
-import Student from '@/components/inc/Student.vue';
-import Teacher from '@/components/inc/Teacher.vue';
+import User from '@/components/inc/User.vue';
 export default {
   name: "Home",
-  data() {
-    return {
-      studentName: "Harry",
-      teacherName: "Peter"
-    }
-  },
+
   components: {
-    Student,
-    Teacher
+    User,
+  },
+  methods: {
+    getUserName(name) {
+      alert(name)
+    }
   }
 
 }
@@ -19,8 +17,6 @@ export default {
 <template>
   <main class="flex justify-center items-center flex-col">
     <h1 class="text-3xl font-bold">Home Page</h1>
-    <h1>Props Example</h1>
-    <Student :name="studentName"></Student>
-    <Teacher :name="teacherName"></Teacher>
+    <User :getUserName="getUserName"></User>
   </main>
 </template>
