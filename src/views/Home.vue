@@ -1,36 +1,26 @@
 <script>
+import Student from '@/components/inc/Student.vue';
+import Teacher from '@/components/inc/Teacher.vue';
 export default {
   name: "Home",
   data() {
     return {
-      colorFull: true,
+      studentName: "Harry",
+      teacherName: "Peter"
     }
   },
-  computed: {
-    applyStyles() {
-      return { green: this.colorFull, err: true }
-    }
+  components: {
+    Student,
+    Teacher
   }
+
 }
 </script>
 <template>
   <main class="flex justify-center items-center flex-col">
-    <h1 class="text-3xl font-bold" :class="applyStyles">Home Page</h1>
-    <button class="bg-red-400 p-1 rounded-sm cursor-pointer" @click="colorFull = !colorFull">Apply Style</button>
-
-
+    <h1 class="text-3xl font-bold">Home Page</h1>
+    <h1>Props Example</h1>
+    <Student :name="studentName"></Student>
+    <Teacher :name="teacherName"></Teacher>
   </main>
 </template>
-<style scoped>
-.green {
-  background-color: green;
-  color: white;
-  padding: 10px;
-  width: 200pxa;
-}
-
-.err {
-  color: red;
-  background-color: pink;
-}
-</style>
