@@ -5,7 +5,10 @@ export default {
     return {
       formData: {
         email: "",
-        password: ""
+        password: "",
+        country: "India",
+        technology: [],
+        gender: ""
       }
     }
   },
@@ -33,6 +36,34 @@ export default {
           <label for="">Password</label>
           <input type="text" class="border border-gray-400 py-1 px-2 rounded-sm block" placeholder="Enter Password"
             v-model="formData.password">
+        </div>
+        <div class="form-control my-3">
+          <label for="">Country</label>
+          <select class="border border-gray-400 w-50 py-1 px-2 bg-gray-700 rounded-sm block" v-model="formData.country">
+            <option value="India">India</option>
+            <option value="China">China</option>
+            <option value="USA">USA</option>
+          </select>
+        </div>
+        <div class="flex gap-3">
+          <div class="form-control my-3">
+            <input type="checkbox" value="Java" v-model="formData.technology">
+            <label for="" class="mx-1">Java</label>
+          </div>
+          <div class="form-control my-3">
+            <input type="checkbox" value=".Net" v-model="formData.technology">
+            <label for="" class="mx-1">.Net</label>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="form-control my-3">
+            <input type="radio" name="gender" value="Male" v-model="formData.gender">
+            <label for="" class="mx-1">Java</label>
+          </div>
+          <div class="form-control my-3">
+            <input type="radio" name="gender" value="Female" v-model="formData.gender">
+            <label for="" class="mx-1">.Net</label>
+          </div>
         </div>
         <button type="button" @click="handleLogin" class="bg-blue-500 py-1 px-2 rounded-sm my-3">Login</button>
       </form>
