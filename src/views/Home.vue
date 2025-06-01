@@ -12,9 +12,9 @@ export default {
   components: {
     Student,
     Teacher
-  }
-
+  },
 }
+
 </script>
 <template>
   <main class="flex justify-center items-center flex-col">
